@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles13.css">
+    <style>
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+        
+        .parallax-container {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+        }
+        
+        .parallax-layer {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('1873.jpg') center/cover no-repeat;
+            background-attachment: fixed;
+            transform: translateZ(0);
+            z-index: -1;
+        }
+        
+        .content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+            text-align: center;
+            color: #412323;
+            transition: transform 0.5s ease-in-out;
+        }
+        /* .eva {
+            width: 200px;
+            height: 200px;
+            background-color: white;
+           
+        } */
+    </style>
+</head>
+
+<body>
+    <div class="parallax-container">
+        <div class="parallax-layer"></div>
+        <div class="content">
+            <h1>HHHHHHHHHH</h1>
+            <p>not work</p>
+        </div>
+    </div>
+
+    <div class="eva"></div>
+
+    <script>
+        document.addEventListener("scroll", function() {
+            var scrollTop = window.scrollY;
+            var translateY = -scrollTop / 5; // Измените коэффициент для настройки скорости движения
+
+            document.querySelector(".content").style.transform = "translate(-50%, calc(-50% + " + translateY + "px))";
+        });
+    </script>
+</body>
+
+</html>
